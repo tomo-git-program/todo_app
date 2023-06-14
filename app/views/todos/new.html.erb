@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>タスクの追加</h1>
+  <% if @todo.errors.any? %>
+    <div  class="alert">
+      <p>タスクのタイトルを入力してください</p>
+    </div>
+  <% end %>
+  <%= form_with model: @todo do |form| %>
+    <div class="form-group">
+      <%= form.text_field :title, placeholder:"タスクを入力する" %>
+      <%= form.submit "保存する" %>
+    </div>
+  <% end %>
+</div>
